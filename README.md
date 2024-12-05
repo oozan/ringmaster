@@ -1,3 +1,5 @@
+
+````
 # Ringmaster Backend App
 
 Ringmaster is a fun, gamified backend application built with **Clojure**. It demonstrates the basics of backend development, API design, and state management. Players can register, claim the ring, and compete to become the "Ringmaster."
