@@ -29,39 +29,39 @@ Ringmaster is a fun, gamified backend application built with **Clojure**. It dem
 - **Request**:
   - `name`: Player's name (e.g., `"Alice"`)
 - **Response**:
-  ```json
+
   {
     "player-id": "uuid",
     "message": "Player Alice registered successfully!"
   }
-  ```
+
 
 ### 3. **Check Ring Status**
 
 - **Endpoint**: `GET /status`
 - **Response**:
   - **If the ring is claimed**:
-    ```json
+
     {
       "ringmaster": "Alice"
     }
-    ```
+
   - **If the ring is unclaimed**:
-    ```json
+
     {
       "message": "The ring is unclaimed!"
     }
-    ```
+
 
 ---
 
 ## How to Run the App
 
 1. **Clone the Repository**:
-   ```bash
+
    git clone <repository-url>
    cd ringmaster-backend
-   ```
+
 
 ### 2. **Claim the Ring**
 
@@ -70,46 +70,46 @@ Ringmaster is a fun, gamified backend application built with **Clojure**. It dem
   - `player-id`: UUID of the player (retrieved from the `/register` endpoint).
 - **Response**:
   - **If successful**:
-    ```json
+
     {
       "success": true,
       "message": "Alice is now the Ringmaster!"
     }
-    ```
+
   - **If the player is not found**:
-    ```json
+
     {
       "success": false,
       "message": "Player not found!"
     }
-    ```
+
 
 ### 3. **Check Ring Status**
 
 - **Endpoint**: `GET /status`
 - **Response**:
   - **If the ring is claimed**:
-    ```json
+
     {
       "ringmaster": "Alice"
     }
-    ```
+
   - **If the ring is unclaimed**:
-    ```json
+
     {
       "message": "The ring is unclaimed!"
     }
-    ```
+
 
 ---
 
 ## How to Run the App
 
 1. **Clone the Repository**:
-   ```bash
+
    git clone <repository-url>
    cd ringmaster-backend
-   ```
+
 
 ### 2. Install Dependencies
 
@@ -123,9 +123,9 @@ Ensure you have **Leiningen** installed. If it's not already installed, follow t
 
 3. **Verify Installation**:
    Run the following command to verify that Leiningen is installed correctly:
-   ```bash
+
    lein --version
-   ```
+
 
 You should see the version of Leiningen printed to the console, confirming the installation was successful.
 
@@ -135,7 +135,7 @@ You should see the version of Leiningen printed to the console, confirming the i
 
 Start the server by running the following command:
 
-````bash
+
 lein ring server
 
 The server will be available at: http://localhost:3000
@@ -151,34 +151,34 @@ You can test the backend using `curl`, **Postman**, or any other API testing too
 ### Register a Player
 - **Endpoint**: `POST /register`
 - **Command**:
-```bash
+
 curl -X POST -d "name=Alice" http://localhost:3000/register
 
 - **Response**:
- ```json
+
  {
    "player-id": "uuid",
    "message": "Player Alice registered successfully!"
  }
- ```
+
 
 
 ### Claim the Ring
 - **Response**:
 - **If successful**:
- ```json
+
  {
    "success": true,
    "message": "Alice is now the Ringmaster!"
  }
- ```
+
 - **If unsuccessful**:
- ```json
+
  {
    "success": false,
    "message": "Player not found!"
  }
- ```
+
 
 ---
 
@@ -186,7 +186,7 @@ curl -X POST -d "name=Alice" http://localhost:3000/register
 ### Check Ring Status
 - **Endpoint**: `GET /status`
 - **Command**:
-```bash
+
 curl http://localhost:3000/status
 
 
