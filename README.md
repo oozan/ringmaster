@@ -1,5 +1,5 @@
 
-````
+
 # Ringmaster Backend App
 
 Ringmaster is a fun, gamified backend application built with **Clojure**. It demonstrates the basics of backend development, API design, and state management. Players can register, claim the ring, and compete to become the "Ringmaster."
@@ -31,29 +31,29 @@ Ringmaster is a fun, gamified backend application built with **Clojure**. It dem
 - **Request**:
   - `name`: Player's name (e.g., `"Alice"`)
 - **Response**:
-
+````
   {
     "player-id": "uuid",
     "message": "Player Alice registered successfully!"
   }
-
+````
 
 ### 3. **Check Ring Status**
 
 - **Endpoint**: `GET /status`
 - **Response**:
   - **If the ring is claimed**:
-
+````
     {
       "ringmaster": "Alice"
     }
-
+````
   - **If the ring is unclaimed**:
-
+````
     {
       "message": "The ring is unclaimed!"
     }
-
+````
 
 ---
 
@@ -72,36 +72,36 @@ Ringmaster is a fun, gamified backend application built with **Clojure**. It dem
   - `player-id`: UUID of the player (retrieved from the `/register` endpoint).
 - **Response**:
   - **If successful**:
-
+````
     {
       "success": true,
       "message": "Alice is now the Ringmaster!"
     }
-
+````
   - **If the player is not found**:
-
+````
     {
       "success": false,
       "message": "Player not found!"
     }
-
+````
 
 ### 3. **Check Ring Status**
 
 - **Endpoint**: `GET /status`
 - **Response**:
   - **If the ring is claimed**:
-
+````
     {
       "ringmaster": "Alice"
     }
-
+````
   - **If the ring is unclaimed**:
-
+````
     {
       "message": "The ring is unclaimed!"
     }
-
+````
 
 ---
 
@@ -153,34 +153,34 @@ You can test the backend using `curl`, **Postman**, or any other API testing too
 ### Register a Player
 - **Endpoint**: `POST /register`
 - **Command**:
-
+````
 curl -X POST -d "name=Alice" http://localhost:3000/register
-
+````
 - **Response**:
-
+````
  {
    "player-id": "uuid",
    "message": "Player Alice registered successfully!"
  }
-
+````
 
 
 ### Claim the Ring
 - **Response**:
 - **If successful**:
-
+````
  {
    "success": true,
    "message": "Alice is now the Ringmaster!"
  }
-
+````
 - **If unsuccessful**:
-
+````
  {
    "success": false,
    "message": "Player not found!"
  }
-
+````
 
 ---
 
@@ -188,8 +188,6 @@ curl -X POST -d "name=Alice" http://localhost:3000/register
 ### Check Ring Status
 - **Endpoint**: `GET /status`
 - **Command**:
-
+````
 curl http://localhost:3000/status
-
-
 ````
